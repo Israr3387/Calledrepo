@@ -5,9 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: trigger the action in the another repo
-        uses:  peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{secrets.REPO_ACCESS_TOKEN}}
+          token: '${{secrets.REPO_ACCESS_TOKEN}}'
           repository: israr3387/CallerRepo
           event-type: my-event
           client-payload: '{"github": ${{ toJson(github) }}}'
+
